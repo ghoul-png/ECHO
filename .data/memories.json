@@ -1,0 +1,288 @@
+{
+  "memories": [
+    {
+      "id": "mem-react",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "decision",
+      "content": "Use React for the frontend.",
+      "topic": "frontend_framework",
+      "value": "React",
+      "reason": "Team is already comfortable with React and the build window is tight.",
+      "status": "SUPERSEDED",
+      "confidence": 0.91,
+      "importance": 0.84,
+      "created_at": "2026-09-10T10:00:00Z",
+      "valid_from": "2026-09-10T10:00:00Z",
+      "valid_until": "2026-09-14T14:00:00Z",
+      "superseded_by": "mem-vue",
+      "change_reason": "Team reassessed frontend fit."
+    },
+    {
+      "id": "mem-vue",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "decision",
+      "content": "Use Vue for the frontend.",
+      "topic": "frontend_framework",
+      "value": "Vue",
+      "reason": "Better perceived developer experience after the team reassessed the stack.",
+      "status": "ACTIVE",
+      "confidence": 0.96,
+      "importance": 0.9,
+      "created_at": "2026-09-14T15:20:00Z",
+      "valid_from": "2026-09-14T15:20:00Z"
+    },
+    {
+      "id": "mem-db",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "decision",
+      "content": "PostgreSQL is the project database.",
+      "topic": "database",
+      "value": "PostgreSQL",
+      "reason": "The team already knows SQL and Supabase integration is fast under the 24-hour hackathon constraint.",
+      "status": "ACTIVE",
+      "confidence": 0.95,
+      "importance": 0.95,
+      "created_at": "2026-09-15T08:30:00Z",
+      "valid_from": "2026-09-15T08:30:00Z"
+    },
+    {
+      "id": "mem-constraint",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "constraint",
+      "content": "The team has a 24-hour hackathon build window.",
+      "topic": "build_window",
+      "value": "24 hours",
+      "reason": "Hackathon constraint.",
+      "status": "ACTIVE",
+      "confidence": 0.99,
+      "importance": 0.78,
+      "created_at": "2026-09-15T07:00:00Z",
+      "valid_from": "2026-09-15T07:00:00Z"
+    },
+    {
+      "id": "mem-05f74dec",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "fact",
+      "content": "tmrw i have a physics exam",
+      "topic": "exam",
+      "value": "tmrw i have a physics exam",
+      "reason": "",
+      "status": "SUPERSEDED",
+      "confidence": 0.88,
+      "importance": 0.9,
+      "created_at": "2026-09-17T16:15:51.465Z",
+      "valid_from": "2026-09-17T16:15:51.465Z",
+      "contradiction_group": "cg-exam",
+      "superseded_by": "mem-4471df6a",
+      "valid_until": "2026-09-17T16:16:15.703Z",
+      "updated_at": "2026-09-17T16:16:15.703Z"
+    },
+    {
+      "id": "mem-4471df6a",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "fact",
+      "content": "when is my physics exam?",
+      "topic": "exam",
+      "value": "when is my physics exam?",
+      "reason": "",
+      "status": "SUPERSEDED",
+      "confidence": 0.88,
+      "importance": 0.9,
+      "created_at": "2026-09-17T16:16:15.703Z",
+      "valid_from": "2026-09-17T16:16:15.703Z",
+      "supersedes_id": "mem-05f74dec",
+      "contradiction_group": "cg-exam",
+      "change_reason": "New statement changed the current value from tmrw i have a physics exam to when is my physics exam?.",
+      "superseded_by": "mem-970561a0",
+      "valid_until": "2026-09-17T16:21:10.966Z",
+      "updated_at": "2026-09-17T16:21:10.966Z"
+    },
+    {
+      "id": "mem-1b5baa95",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "fact",
+      "content": "Hi, tomorrow is my CTF.",
+      "topic": "ctf",
+      "value": "CTF — tomorrow",
+      "reason": "",
+      "status": "ACTIVE",
+      "confidence": 0.88,
+      "importance": 0.9,
+      "created_at": "2026-09-17T16:20:25.016Z",
+      "valid_from": "2026-09-17T16:20:25.016Z",
+      "contradiction_group": "cg-ctf"
+    },
+    {
+      "id": "mem-970561a0",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "fact",
+      "content": "when is my physics exam",
+      "topic": "exam",
+      "value": "when is my physics exam",
+      "reason": "",
+      "status": "ACTIVE",
+      "confidence": 0.88,
+      "importance": 0.9,
+      "created_at": "2026-09-17T16:21:10.966Z",
+      "valid_from": "2026-09-17T16:21:10.966Z",
+      "supersedes_id": "mem-4471df6a",
+      "contradiction_group": "cg-exam",
+      "change_reason": "New statement changed the current value from when is my physics exam? to when is my physics exam."
+    },
+    {
+      "id": "mem-ca1b00f1",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "fact",
+      "content": "tmrw is my physics",
+      "topic": "general",
+      "value": "tmrw is my physics",
+      "reason": "",
+      "status": "ACTIVE",
+      "confidence": 0.88,
+      "importance": 0.78,
+      "created_at": "2026-09-17T16:24:56.824Z",
+      "valid_from": "2026-09-17T16:24:56.824Z",
+      "contradiction_group": "cg-exam"
+    },
+    {
+      "id": "mem-61a98a50",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "fact",
+      "content": "tmrw is my physics exam",
+      "topic": "schedule",
+      "subject": "user",
+      "value": "tmrw is my physics exam",
+      "reason": "",
+      "status": "ACTIVE",
+      "confidence": 0.75,
+      "importance": 0.65,
+      "created_at": "2026-09-17T17:28:03.382Z",
+      "valid_from": "2026-09-17T17:28:03.382Z",
+      "contradiction_group": "cg-exam"
+    },
+    {
+      "id": "mem-663605da",
+      "user_id": "demo-user-01",
+      "project_id": "echo-demo",
+      "type": "fact",
+      "content": "amogh is a bad boy",
+      "topic": "general",
+      "subject": "user",
+      "value": "amogh is a bad boy",
+      "reason": "",
+      "status": "ACTIVE",
+      "confidence": 0.75,
+      "importance": 0.65,
+      "created_at": "2026-09-17T17:28:33.103Z",
+      "valid_from": "2026-09-17T17:28:33.103Z",
+      "contradiction_group": "cg-exam"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-a1478338",
+      "memory_id": "mem-05f74dec",
+      "kind": "CREATE",
+      "message": "New memory promoted to ACTIVE: mem-05f74dec.",
+      "created_at": "2026-09-17T16:15:51.465Z",
+      "metadata": {
+        "topic": "exam",
+        "value": "tmrw i have a physics exam",
+        "oldIds": [],
+        "type": "fact"
+      }
+    },
+    {
+      "id": "evt-e51fdb82",
+      "memory_id": "mem-4471df6a",
+      "kind": "SUPERSESSION",
+      "message": "Contradiction detected. Memory mem-05f74dec superseded by mem-4471df6a.",
+      "created_at": "2026-09-17T16:16:15.703Z",
+      "metadata": {
+        "topic": "exam",
+        "value": "when is my physics exam?",
+        "oldIds": [
+          "mem-05f74dec"
+        ],
+        "type": "fact"
+      }
+    },
+    {
+      "id": "evt-063e4953",
+      "memory_id": "mem-1b5baa95",
+      "kind": "CREATE",
+      "message": "New memory promoted to ACTIVE: mem-1b5baa95.",
+      "created_at": "2026-09-17T16:20:25.016Z",
+      "metadata": {
+        "topic": "ctf",
+        "value": "CTF — tomorrow",
+        "oldIds": [],
+        "type": "fact"
+      }
+    },
+    {
+      "id": "evt-c560146a",
+      "memory_id": "mem-970561a0",
+      "kind": "SUPERSESSION",
+      "message": "Contradiction detected. Memory mem-4471df6a superseded by mem-970561a0.",
+      "created_at": "2026-09-17T16:21:10.966Z",
+      "metadata": {
+        "topic": "exam",
+        "value": "when is my physics exam",
+        "oldIds": [
+          "mem-4471df6a"
+        ],
+        "type": "fact"
+      }
+    },
+    {
+      "id": "evt-50f2ca6e",
+      "memory_id": "mem-ca1b00f1",
+      "kind": "CREATE",
+      "message": "New memory promoted to ACTIVE: mem-ca1b00f1.",
+      "created_at": "2026-09-17T16:24:56.824Z",
+      "metadata": {
+        "topic": "general",
+        "value": "tmrw is my physics",
+        "oldIds": [],
+        "type": "fact"
+      }
+    },
+    {
+      "id": "evt-427c05fe",
+      "memory_id": "mem-61a98a50",
+      "kind": "CREATE",
+      "message": "New memory promoted to ACTIVE: mem-61a98a50.",
+      "created_at": "2026-09-17T17:28:03.382Z",
+      "metadata": {
+        "topic": "schedule",
+        "subject": "user",
+        "value": "tmrw is my physics exam",
+        "oldIds": []
+      }
+    },
+    {
+      "id": "evt-8e84ca28",
+      "memory_id": "mem-663605da",
+      "kind": "CREATE",
+      "message": "New memory promoted to ACTIVE: mem-663605da.",
+      "created_at": "2026-09-17T17:28:33.103Z",
+      "metadata": {
+        "topic": "general",
+        "subject": "user",
+        "value": "amogh is a bad boy",
+        "oldIds": []
+      }
+    }
+  ]
+}

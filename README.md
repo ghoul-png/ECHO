@@ -1,40 +1,64 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ECHO — The Assistant That Never Forgets... Or Does It?
 
-## Getting Started
+ECHO is a conversational memory system: talk normally, let ECHO decide what is worth remembering, retrieve relevant memories later, and track changes over time.
 
-First, run the development server:
+## What is fixed
 
-```bash
+- Normal conversational chat; memory mechanics stay out of the way.
+- Questions are retrieval-only and are never stored as memories.
+- Introductions such as `Hi, I am Hriday` are remembered.
+- Statements about other people such as `Amogh is a good boy` are remembered.
+- Identity questions such as `Who am I?` retrieve identity memory.
+- Relative-time statements such as `Tomorrow is my physics exam` can be recalled later.
+- Contradictory facts can supersede earlier active memories.
+- Gemini handles memory routing and response generation.
+- Gemini embeddings + Supabase pgvector are used when Supabase is configured.
+- Without Supabase, ECHO persists locally in `.data/memories.json`.
+- User/project IDs scope memory retrieval.
+- Technical memory/audit information lives in the Memory Graph and Audit views rather than interrupting normal chat.
+
+## Run on Windows PowerShell
+
+```powershell
+cd D:\path\to\echo-system
+npm install
+copy .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Gemini
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Put your Gemini key in `.env.local`:
 
-## Learn More
+```env
+GEMINI_API_KEY=YOUR_KEY
+GEMINI_MODEL=gemini-2.5-flash
+```
 
-To learn more about Next.js, take a look at the following resources:
+Do not commit `.env.local` or share the key.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Supabase (optional but recommended for the full RAG demo)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run `supabase/schema.sql` in the Supabase SQL editor, then set:
 
-## Deploy on Vercel
+```env
+NEXT_PUBLIC_SUPABASE_URL=YOUR_URL
+SUPABASE_SERVICE_ROLE_KEY=YOUR_SERVER_ONLY_SERVICE_ROLE_KEY
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The service role key is server-side only. Never expose it as `NEXT_PUBLIC_*`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# ECHO
->>>>>>> 1474c400a6dbb0e141b2f8f865747eedf79957b5
+## Demo script
+
+1. Open ASK ECHO.
+2. Say: `Hi, I am Hriday.`
+3. Have a normal conversation.
+4. Ask: `Hey ECHO, who am I?`
+5. ECHO should answer `You're Hriday.` using the stored identity memory.
+6. Say: `Tomorrow is my physics exam.`
+7. Ask: `When is my physics exam?`
+8. Say: `We switched from React to Vue.`
+9. Ask: `What frontend are we using?`
+10. Open Memory Graph / Evolution to show the underlying memory lifecycle to judges.
